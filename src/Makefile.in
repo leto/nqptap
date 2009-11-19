@@ -17,7 +17,7 @@ PBC_TO_EXE  = $(PARROT_BIN)/pbc_to_exe
 PARROT_NQP  = $(PARROT_BIN)/parrot-nqp
 
 # The default target
-all: plparrot$(EXE)
+all: nqptap$(EXE)
 
 # Always run the FORCEd targets, without checking the filesystem
 .PHONY: FORCE
@@ -33,19 +33,19 @@ help: FORCE
 	@echo ""
 	@echo "The following targets are available:"
 	@echo ""
-	@echo "  all:         Generate plparrot executable (default target)"
+	@echo "  all:         Generate nqptap executable (default target)"
 	@echo "  clean:       Clean generated files"
-	@echo "  test:        Test plparrot and its libraries"
+	@echo "  test:        Test nqptap and its libraries"
 	@echo "  help:        Print this help message"
 	@echo ""
 
 # The main build sequence
-plparrot$(EXE): src/plparrot$(EXE)
-	$(CP) src/plparrot$(EXE) plparrot$(EXE)
-	$(CHMOD) 0755 plparrot$(EXE)
+nqptap$(EXE): src/nqptap$(EXE)
+	$(CP) src/nqptap$(EXE) nqptap$(EXE)
+	$(CHMOD) 0755 nqptap$(EXE)
 
-src/plparrot$(EXE): Makefile src/plparrot.pbc src/lib/Metadata.pbc src/lib/Util.pbc src/lib/Glue.pbc
-	$(PBC_TO_EXE) src/plparrot.pbc
+src/nqptap$(EXE): Makefile src/nqptap.pbc src/lib/Metadata.pbc src/lib/Util.pbc src/lib/Glue.pbc
+	$(PBC_TO_EXE) src/nqptap.pbc
 
 .SUFFIXES: .nqp .pir .pbc
 
@@ -60,8 +60,8 @@ realclean: clean
 
 clean: FORCE
 	$(RM_F) "*~" "src/lib/*.pbc" "src/*.pbc" "src/*$(O)" "src/*.c" \
-	        src/lib/Util.pir src/lib/Metadata.pir src/plparrot.pir \
-	        src/plparrot$(EXE) plparrot$(EXE) Makefile
+	        src/lib/Util.pir src/lib/Metadata.pir src/nqptap.pir \
+	        src/nqptap$(EXE) nqptap$(EXE) Makefile
 
 test: FORCE
 	$(PARROT_NQP) t/harness t/*.t

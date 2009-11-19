@@ -14,7 +14,7 @@ MAIN();
 
 sub MAIN () {
     # Wave to the friendly users
-    say("Hello, I'm Configure. My job is to poke and prod\nyour system to figure out how to build PL/Parrot.\n");
+    say("Hello, I'm Configure. My job is to poke and prod\nyour system to figure out how to build nqpTAP.\n");
 
     # Load Parrot config and glue functions
     pir::load_bytecode('PGE.pbc');
@@ -38,9 +38,9 @@ sub MAIN () {
     # Give the user a hint of next action
     my $make := %VM<config><make>;
     say("Configure completed for platform '$OS'.");
-    say("You can now type '$make' to build PL/Parrot.\n");
-    say("You may also type '$make test' to run the PL/Parrot test suite.\n");
-    say("Happy Hacking,\n\tThe PL/Parrot Team");
+    say("You can now type '$make' to build nqpTAP.\n");
+    say("You may also type '$make test' to run the nqpTAP test suite.\n");
+    say("Happy Hacking,\n\tThe nqpTAP Team");
 }
 
 sub replacement ($match) {
