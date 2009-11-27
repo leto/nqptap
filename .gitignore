@@ -1,4 +1,8 @@
 
+nqptap.pbc
+nqptap/
+src/gen_actions.pir
+src/gen_grammar.pir
 *~
 *.sw?
 Makefile
