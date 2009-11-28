@@ -1,8 +1,14 @@
+# Editor junk
+*~
+*.sw?
 
+# Generated files
 nqptap.pbc
 nqptap/
 src/gen_actions.pir
 src/gen_grammar.pir
-*~
-*.sw?
 Makefile
+installable_nqptap
+nqptap.c
+nqptap.o
+
